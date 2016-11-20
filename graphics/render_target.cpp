@@ -13,6 +13,10 @@ namespace gef
 
 	RenderTarget::~RenderTarget()
 	{
-		delete texture_;
+		if( texture_ )
+		{			
+			delete texture_;
+			texture_ = NULL;
+		}
 	}
 }
