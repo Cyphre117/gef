@@ -11,7 +11,16 @@ namespace gef
 
 	ImageData::~ImageData()
 	{
-		delete image_;
-		delete clut_;
+		if (image_)
+		{			
+			delete image_;
+			image_ = NULL;
+		}
+		
+		if (clut_)
+		{
+			delete clut_;
+			clut_ = NULL;
+		}
 	}
 }
